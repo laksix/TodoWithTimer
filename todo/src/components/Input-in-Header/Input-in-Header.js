@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './Input-in-Header.css'
-const Input = () => {
-    return <input className='new-todo' placeholder='What needs to be done?' autoFocus></input>
-}
+export default class Input extends Component {
 
-export default Input
+
+   
+    render()
+    {return (
+    <input className='new-todo' value = {this.props.name}
+    placeholder='What needs to be done?' autoFocus onChange={this.props.addNewText} onKeyDown={this.props.setCurrentName}></input>
+)
+}
+}

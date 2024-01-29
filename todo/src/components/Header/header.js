@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Input from '../Input-in-Header'
 import './header.css'
-const Header = () => {
+export default class Header extends Component {
+    render(){
     return (
     <header className='header'>
        <h1>Todos</h1>
-       <Input/>
+       <Input addNewText = {this.props.addNewText} setCurrentName = {this.props.setCurrentName}/>
     </header>
     )
 }
+}
 
-export default Header
+
 

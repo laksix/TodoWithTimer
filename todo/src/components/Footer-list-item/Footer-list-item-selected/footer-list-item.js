@@ -1,9 +1,9 @@
 import React from "react";
 import './footer-list-item.css'
-const FooterItem = ({status,name,click}) => {
+const FooterItem = ({status,name,click,id}) => {
     return (
         <li>
-            <button className={status ? 'selected' : ''} onClick = {click}>{name}</button>
+            <button className={status ? 'selected' : ''} onClick = {() => {click(id)}}>{name}</button>
         </li>
     )
 }

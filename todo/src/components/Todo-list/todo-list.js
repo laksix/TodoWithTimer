@@ -8,11 +8,11 @@ export default class Todolist extends Component {
 
     render()
     {
-    const {onDeleted} = this.props
+    const {onDeleted,onItemClick,onStartEdit} = this.props
     return (
     <ul className='todo-list'>
      {this.props.elements.map(e => {
-    return <TodoIistItem name={e.name} key = {e.id} onDeleted = {() => onDeleted(e.id)}/>
+    return <TodoIistItem editing = {e.editing} onStartEdit = {() => onStartEdit(e.id)} name={e.name} key = {e.id} onItemClick = {() => onItemClick(e.id)} completed = {e.completed} hidden = {e.hidden} onDeleted = {() => onDeleted(e.id)}/>
      })}
  </ul>
     )

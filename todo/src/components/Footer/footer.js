@@ -3,14 +3,21 @@ import FooterList from '../Footer-list'
 import './footer.css'
 export default class Footer extends Component{
     countItem = (elements) => {
-        const count = elements.length
-        return (`${count} items left`)
+        let count = 0
+        elements.forEach(e => {
+            if (!e.hidden){
+                count++
+            }
+        })
+        return `${count} item left`
     }
+    
     render(){
+        const {clearCompleted} = this.props
     return <footer className='footer'>
         <span className='todo-count'>{this.countItem(this.props.elements)}</span>
-        <FooterList/>
-        <button className="clear-completed">Clear completed</button>
+        <FooterList footerItems = {this.props.footerItems} el = {this.props.elements}/>
+        <button onClick = {() => clearCompleted()} className="clear-completed">Clear completed</button>
     </footer>
 }
 }

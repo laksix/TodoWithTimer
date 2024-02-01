@@ -5,13 +5,12 @@ import './secondblock.css'
 export default class SecondBlock extends Component {
     
     
-   
     render()
     {
     return (
         <section className="main">
-            <Todolist onDeleted = {this.props.onDeleted} elements = {this.props.elements}/>
-            <Footer elements = {this.props.elements}/>
+            <Todolist onStartEdit = {this.props.onStartEdit} onDeleted = {this.props.onDeleted} onItemClick = {this.props.onItemClick} elements = {this.props.elements}/>
+            <Footer clearCompleted = {this.props.clearCompleted} footerItems = {this.props.footerItems} elements = {this.props.elements}/>
         </section>
     )
 }

@@ -41,7 +41,7 @@ export default class TodoIistItem extends Component {
                     <input className='toggle' type='checkbox' checked = {this.props.completed} onChange={() => {}}/>
                     <label>
                     <span className='description'>{name}</span>
-                        <span className='created' >{result()}</span>
+                        <span className='created' >created {result()}</span>
                     </label>
                     <button className='icon icon-edit' onClick = {onStartEdit}></button>
                     <button className='icon icon-destroy' onClick = {onDeleted}></button>

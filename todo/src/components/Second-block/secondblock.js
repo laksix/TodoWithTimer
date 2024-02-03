@@ -9,7 +9,7 @@ export default class SecondBlock extends Component {
     {
     return (
         <section className="main">
-            <Todolist onStartEdit = {this.props.onStartEdit} onDeleted = {this.props.onDeleted} onItemClick = {this.props.onItemClick} elements = {this.props.elements}/>
+            <Todolist onFinishEdit = {this.props.onFinishEdit} setNameEdit = {this.props.setNameEdit} onStartEdit = {this.props.onStartEdit} onDeleted = {this.props.onDeleted} onItemClick = {this.props.onItemClick} elements = {this.props.elements}/>
             <Footer clearCompleted = {this.props.clearCompleted} footerItems = {this.props.footerItems} elements = {this.props.elements}/>
         </section>
     )

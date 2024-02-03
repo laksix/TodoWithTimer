@@ -4,7 +4,6 @@ import SecondBlock from '../Second-block'
 import './first-section.css'
 export default class FirstSection extends Component{
     state = {
-        currentName: '',
             elements: [],
             footerItems:[{
                 name: 'All',
@@ -134,6 +133,31 @@ export default class FirstSection extends Component{
             }
         })
     }
+    
+    setNameEdit = (event,id) => {
+        this.setState(({elements}) => {
+            return {
+                elements: elements.map(e => {
+                    if (e.id === id){
+                        e.name = event.target.value
+                    }return e
+                })
+            }
+        })
+    }
+    onFinishEdit = (id) => {
+        this.setState(({elements}) => {
+            return {
+                elements: elements.map(e => {
+                    if (e.id === id) {
+                        e.editing = false
+                    }
+                    return e
+                })
+            }
+        })
+    }
+   
    addItem = () => {
     if (this.state.currentName.length === 0) return ;
     this.setState(({elements}) => {
@@ -145,11 +169,10 @@ export default class FirstSection extends Component{
    }
   
     render (){
-
     return (
     <section className='todoapp'>
         <Header addNewText = {this.addNewText} setCurrentName = {this.setCurrentName}/>
-        <SecondBlock onStartEdit = {this.onStartEdit} clearCompleted = {this.clearCompleted} footerItems = {this.state.footerItems} onItemClick = {this.onItemClick}  currentName = {this.state.currentName} elements = {this.state.elements} onDeleted = {this.deleteItem}/>
+        <SecondBlock onFinishEdit = {this.onFinishEdit} setNameEdit = {this.setNameEdit} onStartEdit = {this.onStartEdit} clearCompleted = {this.clearCompleted} footerItems = {this.state.footerItems} onItemClick = {this.onItemClick}  currentName = {this.state.currentName} elements = {this.state.elements} onDeleted = {this.deleteItem}/>
         </section>
     )
     }

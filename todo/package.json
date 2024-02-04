@@ -12,12 +12,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy":"gh-pages -d build",
-    "predeploy":"npm run build"
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.23.10",
+    "babel-eslint": "^10.1.0"
   }
 }

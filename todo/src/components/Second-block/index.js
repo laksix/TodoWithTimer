@@ -1,2 +1,1 @@
-import SecondBlock from "./secondblock";
-export default SecondBlock
+import SecondBlock from './secondblock';export default SecondBlock;

@@ -1,2 +1,1 @@
-import FirstSection from "./fitst-section";
-export default FirstSection
+import FirstSection from './fitst-section';export default FirstSection;

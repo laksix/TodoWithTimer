@@ -39,7 +39,6 @@ export default class Input extends Component {
         this.setState({input3: e.target.value})
       }}autoFocus></input>
       </form>
-     
-    );
+    )
+    }
   }
-}

@@ -45,7 +45,6 @@ export default class TodoIistItem extends Component {
 
 
   render() {
-    console.log(this.state)
     const minutes = this.getTIme(Math.floor(this.state.timeLeft / 60))
     const seconds = this.getTIme(this.state.timeLeft - minutes * 60)
     const { name, onDeleted, onItemClick, onStartEdit, id} = this.props;

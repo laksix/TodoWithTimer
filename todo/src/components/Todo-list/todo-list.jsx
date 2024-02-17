@@ -8,6 +8,7 @@ export default class Todolist extends Component {
     const currentMin = Number(min)
     const currentSec = Number(sec)
     const time = currentMin*60+currentSec
+
     return (
       <ul className="todo-list">
         {this.props.elements.map((e) => {

@@ -7,10 +7,8 @@ export default class SecondBlock extends Component {
     return (
       <section className="main">
         <Todolist
-          sec = {this.props.sec}
           min = {this.props.min}
-          timeSec = {this.props.timeSec}
-          timeMin = {this.props.timeMin}
+          sec = {this.props.sec}
           onFinishEdit={this.props.onFinishEdit}
           setNameEdit={this.props.setNameEdit}
           onStartEdit={this.props.onStartEdit}

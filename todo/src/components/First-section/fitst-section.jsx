@@ -100,10 +100,8 @@ export default class FirstSection extends Component {
     if (event.key === 'Enter') {
       event.target.value = '';
       this.addItem();
-    
     }
   };
-  
   clearCompleted = () => {
     this.setState(({ elements }) => {
       return {
@@ -181,6 +179,7 @@ export default class FirstSection extends Component {
       };
     });
   };
+
   setCurrentMin = (e) => {
     this.setState({
       timeMin : e.target.value
@@ -208,7 +207,6 @@ export default class FirstSection extends Component {
     
 
   render() {
-    console.log(this.state)
     return (
       <section className="todoapp">
         <Header clearInput = {this.clearInput} setTimeSec = {this.setCurrentMin} setTimeMin = {this.setCurrentSec} addNewText={this.addNewText} setCurrentName={this.setCurrentName} />
